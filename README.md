@@ -5,7 +5,7 @@
 
 Nutcracker is a web app that makes it easy for cipher enthusiasts (or unlucky Science Olympiad students) to practice some of the most common types of ciphers. 
 
-Check it out here! The interface allows users to solve from a list of ciphers and sign in to save their progress. The frontend is mainly React while the backend is mainly Express + mongoDB.
+[Check it out here](https://nutcracker-app.herokuapp.com/)! The interface allows users to solve from a list of ciphers and sign in to save their progress. The frontend is mainly React while the backend is mainly Express + mongoDB.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ $ npm install
 
 To use Nutcracker, follow these steps:
 
-1. Add an .env file in the application's root directory with your own values:
+1. Add an .env file in `backend`'s root directory with your own values:
 
 ```
 MONGODB_URI='<mongo uri/connection string>'
