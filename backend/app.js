@@ -1,3 +1,5 @@
+const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -30,8 +32,18 @@ app.use(middleware.tokenExtractor);
 app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/ciphers', ciphersRouter);
+
+// In development, ciphers can be modified
 if (process.env.NODE_ENV === 'development') {
   app.use('/api/ciphers', adminRouter);
+} else if (
+  process.env.NODE_ENV === 'production' &&
+  fs.existsSync(path.join(__dirname, '/build'))
+) {
+  app.use(express.static(path.join(__dirname, '/build')));
+  app.get('/*', (request, response) => {
+    response.sendFile(path.join(__dirname, '/build/index.html'));
+  });
 }
 
 app.use(middleware.unknownEndpoint);
