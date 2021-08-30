@@ -1,0 +1,21 @@
+{
+  "name": "nutcracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd backend && npm start",
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install --production=false && npm run build && cp -r build ../backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preservedfish/nutcracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preservedfish/nutcracker/issues"
+  },
+  "homepage": "https://github.com/preservedfish/nutcracker#readme"
+}
